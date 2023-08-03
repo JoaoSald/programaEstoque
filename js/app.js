@@ -30,6 +30,8 @@
      let Situacao = document.getElementById("situacao")
      let NomeCliente = document.getElementById("inputNomeCli")
      let NumeroCliente = document.getElementById("inputNumeroCli")
+     const MesVenda = document.getElementById("mes-venda")
+     const AnoVenda = document.getElementById("inputAnoVenda")
  
      let insBtn = document.getElementById("insBtn")
      let selBtn = document.getElementById("selBtn")
@@ -48,7 +50,9 @@
                  PrecoDeVenda:PrecoVenda.value,
                  Situacao : Situacao.value,
                  NomeCliente : NomeCliente.value,
-                 NumeroCliente : NumeroCliente.value
+                 NumeroCliente : NumeroCliente.value,
+                 MesVenda : MesVenda.value,
+                 AnoVenda : AnoVenda.value
              }
          )
          .then(()=>{
@@ -71,7 +75,9 @@
                  PrecoDeVenda:PrecoVenda.value,
                  Situacao : Situacao.value,
                  NomeCliente : NomeCliente.value,
-                 NumeroCliente : NumeroCliente.value
+                 NumeroCliente : NumeroCliente.value,
+                 MesVenda : MesVenda.value,
+                 AnoVenda : AnoVenda.value
              }
          )
          .then(()=>{
@@ -96,8 +102,11 @@
                Situacao.value = docSnap.data().Situacao;
                NomeCliente.value = docSnap.data().NomeCliente;
                NumeroCliente.value = docSnap.data().NumeroCliente;
+               MesVenda.value = docSnap.data().MesVenda;
+               AnoVenda.value = docSnap.data().AnoVenda;
+
              } else{
-               alert("No such document")
+               alert("Produto não encontrado")
              }
         }
  
@@ -112,7 +121,9 @@
                      PrecoDeVenda:PrecoVenda.value,
                      Situacao : Situacao.value,
                      NomeCliente : NomeCliente.value,
-                     NumeroCliente : NumeroCliente.value
+                     NumeroCliente : NumeroCliente.value,
+                     MesVenda : MesVenda.value,
+                     AnoVenda : AnoVenda.value
                  }
              )
              .then(()=>{
@@ -151,6 +162,8 @@
        document.getElementById("preco-venda").value = "";
        document.getElementById("inputNomeCli").value = "";
        document.getElementById("inputNumeroCli").value = "";
+       document.getElementById("mes-venda").value = "";
+       document.getElementById("inputAnoVenda").value = "";
      })
      selBtn.addEventListener("click", GetADocument);
      // updBtn.addEventListener("click", UpdateFieldInADocument);
@@ -170,5 +183,7 @@
        document.getElementById("preco-venda").value = "";
        document.getElementById("inputNomeCli").value = "";
        document.getElementById("inputNumeroCli").value = "";
+       document.getElementById("mes-venda").value = "";
+       document.getElementById("inputAnoVenda").value = "";
      })
  

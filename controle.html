@@ -74,10 +74,31 @@
                 <label for="inputNumeroCli" class="form-label">Número cel:</label>
                 <input type="text" class="form-control" id="inputNumeroCli" disabled>
              </div> 
-             </div>
+             </div> <br> <br>
 
-              </div> <br>
-
+              <div class="col-md-12">
+                <select class="form-select" aria-label="Default select example" id="mes-venda" disabled>
+                  <option selected>Selecionar Mês</option>
+                  <option value="janeiro">Janeiro</option>
+                  <option value="fevereiro">Fevereiro</option>
+                  <option value="fevereiro">Março</option>
+                  <option value="fevereiro">Abril</option>
+                  <option value="fevereiro">Maio</option>
+                  <option value="fevereiro">Junho</option>
+                  <option value="fevereiro">Julho</option>
+                  <option value="fevereiro">Agosto</option>
+                  <option value="fevereiro">Setembro</option>
+                  <option value="fevereiro">Outubro</option>
+                  <option value="fevereiro">Novembro</option>
+                  <option value="fevereiro">Dezembro</option>
+               </select> 
+             </div> 
+    
+             <div class="col-md-12 col-sm-12">
+              <label for="inputAnoVenda" class="form-label">Ano</label>
+              <input type="text" class="form-control" id="inputAnoVenda" disabled>
+           </div> 
+       </div><br>
             <div class="text-center">
              <button id="insBtn" type="button" class="btn btn-primary">Enviar</button> <br> <br>
              <button id="selBtn" type="button" class="btn btn-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -96,14 +117,20 @@
       const situacao = document.getElementById("situacao")
       const nomeCli = document.getElementById("inputNomeCli")
       const numeroCli = document.getElementById("inputNumeroCli")
+      const mesVenda = document.getElementById("mes-venda")
+      const anoVenda = document.getElementById("inputAnoVenda")
 
       situacao.addEventListener("change", function() {
         if (situacao.value === 'vendido') {
           nomeCli.disabled = false;
           numeroCli.disabled = false;
+          mesVenda.disabled = false;
+          anoVenda.disabled = false;
         } else {
           nomeCli.disabled = true;
           numeroCli.disabled = true;
+          mesVenda.disabled = true;
+          anoVenda.disabled = true;
         }
       });
     </script>
