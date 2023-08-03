@@ -6,7 +6,7 @@ var li = document.getElementById('somaqtd')
 var liInvestimento = document.getElementById('investimento')
 var liLucro = document.getElementById('lucro')
 
-function AddItemToTable(cod, prod, compra, venda, situ){
+function AddItemToTable(cod, prod, compra, venda, situ, nomecli, numcli){
   let trow = document.createElement("tr");
   let td1 = document.createElement("td");
   let td2 = document.createElement("td");
@@ -14,6 +14,8 @@ function AddItemToTable(cod, prod, compra, venda, situ){
   let td4 = document.createElement("td");
   let td5 = document.createElement("td");
   let td6 = document.createElement("td");
+  let td7 = document.createElement("td");
+  let td8 = document.createElement("td");
 
   if(situ !== 'vendido'){
     td1.innerHTML= ++prodNo;
@@ -26,6 +28,8 @@ function AddItemToTable(cod, prod, compra, venda, situ){
   if(situ === 'vendido'){
    td6.style.color='red'
   }
+  td7.innerHTML= nomecli !== undefined ? nomecli : '';
+  td8.innerHTML= numcli !== undefined ? nomecli : '';
 
   trow.appendChild(td1)
   trow.appendChild(td2)
@@ -33,6 +37,8 @@ function AddItemToTable(cod, prod, compra, venda, situ){
   trow.appendChild(td4)
   trow.appendChild(td5)
   trow.appendChild(td6)
+  trow.appendChild(td7)
+  trow.appendChild(td8)
 
   tbody.appendChild(trow)
   td1.classList.add('d-none')
@@ -43,7 +49,7 @@ function AddAllItemsToTable(TheProdutos){
   tbody.innerHTML="";
   TheProdutos.sort((a, b) => a.CodigoOfstd - b.CodigoOfstd); //odena coluna código
   TheProdutos.forEach(element => {
-    AddItemToTable(element.CodigoOfstd, element.ProdutoNovo, element.PrecoDeCompra, element.PrecoDeVenda, element.Situacao);
+    AddItemToTable(element.CodigoOfstd, element.ProdutoNovo, element.PrecoDeCompra, element.PrecoDeVenda, element.Situacao, element.NomeCliente, element.NumeroCliente);
        li.innerHTML = `Quantidade de produtos: ${prodNo}`
   });
   
