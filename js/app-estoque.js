@@ -29,7 +29,7 @@ function AddItemToTable(cod, prod, compra, venda, situ, nomecli, numcli){
    td6.style.color='red'
   }
   td7.innerHTML= nomecli !== undefined ? nomecli : '';
-  td8.innerHTML= numcli !== undefined ? nomecli : '';
+  td8.innerHTML= numcli !== undefined ? numcli : '';
 
   trow.appendChild(td1)
   trow.appendChild(td2)
