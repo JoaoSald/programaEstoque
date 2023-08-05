@@ -38,7 +38,7 @@
      let updBtn = document.getElementById("updBtn")
      let delBtn= document.getElementById("delBtn")
      //-----------------------Adding Document------------------------//
- 
+   
      async function AddDocument_AutoID(){
          var ref = collection(db, "ListaProdutos")
  
