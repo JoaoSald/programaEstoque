@@ -1,8 +1,10 @@
 
 //----------FILLING THE TABLE-----------------//
 var prodNo = 0;
+let prodQtd = 0;
 var tbody = document.getElementById('tbody1')
 var li = document.getElementById('somaqtd')
+var liQtd = document.getElementById('somaqtdE')
 var liInvestimento = document.getElementById('investimento')
 var liLucro = document.getElementById('lucro')
 
@@ -20,6 +22,7 @@ function AddItemToTable(cod, prod, compra, venda, situ, nomecli, numcli){
   if(situ !== 'vendido'){
     td1.innerHTML= ++prodNo;
   }
+  td1.innerHTML= ++prodQtd;
   td2.innerHTML= cod;
   td3.innerHTML= prod;
   td4.innerHTML= compra;
@@ -46,11 +49,13 @@ function AddItemToTable(cod, prod, compra, venda, situ, nomecli, numcli){
 
 function AddAllItemsToTable(TheProdutos){
   prodNo = 0;
+  prodQtd = 0;
   tbody.innerHTML="";
   TheProdutos.sort((a, b) => a.CodigoOfstd - b.CodigoOfstd); //odena coluna código
   TheProdutos.forEach(element => {
     AddItemToTable(element.CodigoOfstd, element.ProdutoNovo, element.PrecoDeCompra, element.PrecoDeVenda, element.Situacao, element.NomeCliente, element.NumeroCliente);
-       li.innerHTML = `Quantidade de produtos: ${prodNo}`
+       li.innerHTML = `Quantidade de produtos em estoque: ${prodNo}`
+       liQtd.innerHTML = `Quantidade de produtos: ${prodQtd}`
   });
   
 }
