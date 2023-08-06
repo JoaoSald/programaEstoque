@@ -58,7 +58,7 @@
 }
 .table-wrapper{
         /* max-width: 300px; */
-       max-height: 300px;
+       max-height: 365px;
        overflow-y: scroll;
        /* overflow-x: scroll; */
 }
