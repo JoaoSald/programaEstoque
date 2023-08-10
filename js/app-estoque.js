@@ -52,6 +52,7 @@ function AddAllItemsToTable(TheProdutos){
   prodQtd = 0;
   tbody.innerHTML="";
   TheProdutos.sort((a, b) => a.CodigoOfstd - b.CodigoOfstd); //odena coluna código
+
   TheProdutos.forEach(element => {
     AddItemToTable(element.CodigoOfstd, element.ProdutoNovo, element.PrecoDeCompra, element.PrecoDeVenda, element.Situacao, element.NomeCliente, element.NumeroCliente);
        li.innerHTML = `Quantidade de produtos em estoque: ${prodNo}`
