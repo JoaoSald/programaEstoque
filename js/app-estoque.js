@@ -98,7 +98,9 @@ import{
 }
 from "https://www.gstatic.com/firebasejs/9.1.0/firebase-firestore.js";
 
-const db = getFirestore();
+const db = getFirestore(app, {
+  persistence: true // Enable offline data persistence
+});
 
 //--------------------GET ALL DATA-----------------------//
 async function GetAllDataOnce(){
