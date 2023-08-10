@@ -128,5 +128,4 @@ async function GetAllDataRealTime(){
  }
 
  window.onload = GetAllDataRealTime;
- 
 

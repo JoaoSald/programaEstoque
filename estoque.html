@@ -25,7 +25,7 @@
         </div>
       </nav>
     </header>      
-
+  
     <div class="text-center feedback">
       <img src="imagens/icons8-estoque-36.png" alt="">
       <h4>informações do estoque</h4>
@@ -36,10 +36,25 @@
     </div>
 
     <div class="container tabela-produtos">
+      <!-- <form class="ms-3 mt-3" >
+        <input type="text" id="serchbar" class="form-control shadow-sm input-col" placeholder="Pesquisar">
+        <select class="form-select seleciona-coluna" aria-label="Default select example" id="pesquisa-col">
+        <option selected>Selecionar coluna</option>
+        <option value="Código">Código</option>
+        <option value="Produto">Produto</option>
+        <option value="Compra">Compra</option>
+        <option value="Preco">Preço</option>
+        <option value="Status">Status</option>
+        <option value="Nome Cliente">Nome Cliente</option>
+        <option value="Numero Cliente">Numero Cliente</option> 
+     </select>
+      
+      </form> -->
+      
       <div class="table-wrapper">
-          <table class=" table table-striped table-bordered "> 
+          <table class=" table table-striped table-bordered" id="tbl1"> 
       <!-- table-dark  -->
-        <thead>
+        <thead style="position: sticky; top: 0;">
             <th scope="col">código</th>
             <th scope="col">produto</th>
             <th scope="col">compra(R$)</th>
@@ -55,7 +70,6 @@
       </div>
   
     </div>
-
 <script type="module" src="js/app-estoque.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
