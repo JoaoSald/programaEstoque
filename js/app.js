@@ -109,6 +109,22 @@
                alert("Produto não encontrado")
              }
         }
+        //--------------------VERIFICA CODIGO----------------------------------//
+        const inputCodigo = document.getElementById('inputcodigo')
+        const botaoEnviar = document.getElementById('insBtn')
+
+        inputCodigo.addEventListener('keyup', async () => {
+          var ref = doc(db, "ListaProdutos", inputCodigo.value);
+          const docSnap = await getDoc(ref);
+          if (docSnap.exists()) {
+            alert('Botão enviar desativado pois este código já existe !!!')
+            botaoEnviar.disabled = true;
+          } else {
+            console.log('Código não existe');
+            botaoEnviar.disabled = false;
+          }
+        });
+        
  
        //-----------------------UPDATING DOCUMENT DATA------------------------//
          async function UpdateFieldInADocument(){
@@ -166,7 +182,7 @@
        document.getElementById("inputAnoVenda").value = "";
      })
      selBtn.addEventListener("click", GetADocument);
-     // updBtn.addEventListener("click", UpdateFieldInADocument);
+     updBtn.addEventListener("click", UpdateFieldInADocument);
      delBtn.addEventListener("click", clicou => {
        const confirmDelete = window.confirm("Tem certeza que deseja remover o dado?");
        if (confirmDelete) {
